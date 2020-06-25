@@ -1,6 +1,6 @@
 // import './style.css';
 
-var inputBuilder = {
+const inputBuilder = {
   setAttributes: function(element, attributes){
     Object.entries(attributes).forEach(([attr, value]) => {
       element.setAttribute(attr, value);
@@ -8,7 +8,7 @@ var inputBuilder = {
   },
 
   buildElement: function(elementName, attributes){
-    var item = document.createElement(elementName);
+    const item = document.createElement(elementName);
 
     if (typeof attributes === 'object') {
       this.setAttributes(item, attributes);
@@ -18,16 +18,16 @@ var inputBuilder = {
   },
 
   run: function(){
-    let outerContainer = this.buildElement('div', { id: 'items-outer-container'});
-    let container = this.buildElement('div', { id: 'items-container'});
-    let itemInput = this.buildElement('div', { id: 'item-input'});
-    let textInput = this.buildElement('input', { type: 'text', placeholder: 'Add a new task'});
+    const outerContainer = this.buildElement('div', { id: 'items-outer-container'});
+    const container = this.buildElement('div', { id: 'items-container'});
+    const itemInput = this.buildElement('div', { id: 'item-input'});
+    const textInput = this.buildElement('input', { type: 'text', placeholder: 'Add a new task'});
 
     outerContainer.append(container);
     container.append(itemInput);
     itemInput.append(textInput)
 
-    let todo = document.getElementById('todo-list');
+    const todo = document.getElementById('todo-list');
 
     todo.append(outerContainer);
   }
