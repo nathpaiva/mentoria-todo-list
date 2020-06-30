@@ -1,4 +1,4 @@
-// import './style.css';
+import './style.css';
 
 const inputBuilder = {
   setAttributes: function(element, attributes){
